@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int a,i;
+    printf("ENTER THE NUMBER WHIC NEEDS TO CHECKED IF PRIME OR NOT");
+    scanf("%d",&a);
+    for(i=2;i<=a/2;i++)
+    {
+        if(a%i==0)
+        {
+            printf("THE NUMBER IS NOT PRIME");
+            break;
+        }
+        else
+        {
+            printf("THE NUMBER IS PRIME");
+            break;
+        }
+    }
+    return 0;
+}
