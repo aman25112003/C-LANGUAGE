@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int i,j,n,flag1=0;
+    printf("ENTER THE NUMBER OF ELEMENTS IN THE ARRAY\n");
+    scanf("%d\n",&n);
+    int A[n],B[n],C[n],D[n];
+    for(i=0;i<n;i++)
+    {
+        printf("ELEMENT %d:\n",i);
+        scanf("%d",&A[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("THE %d ELEMENT OF THE ARRAY A IS %d:\n",i,A[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        B[i]=A[i];
+    }
+    printf("THE UNIQUE ELEMENTS OF THE ARRAY ARE :\n");
+    for(i=0;i<n;i++)
+    {
+        flag1=0;
+        for(j=0;j<n;j++)
+        {
+            if(i!=j)
+          {
+            if(A[i]==B[j])
+            {
+                flag1++;
+            }
+          }
+          
+        }
+    if(flag1==0)
+    {
+        printf("%d\n",A[i]);
+    }
+  
+     
+    }
+
+return 0;
+}
