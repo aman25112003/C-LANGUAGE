@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <conio.h>
+//FUNCTION FOR BINARY SEARCH
+int binarysearch(int arr[],int size,int element)
+{
+    int low=0,mid;
+    int high=size-1;
+    while(low<=high)
+    {
+        mid=(low+high)/2;
+        if(arr[mid]==element)
+        {
+            return mid+1;
+        }
+        if(arr[mid]<element)
+        {
+            low=mid+1;
+        }
+        else
+        {
+            high=mid-1;
+        }
+    }
+    return -1;
+}
+//MAIN FUNCTION
+int main()
+{
+    int i,x,arr[100],size,element;
+    printf("ENTER THE NUMBER OF ELEMENTS IN THE ARRAY:\n");
+    scanf("%d",&size);
+    printf("ENTER THE ELEMENT WHICH NEEDS TO BE SEARCHED:\n");
+    scanf("%d",&element);
+    printf("\t\t\t\t\t ENTER THE ARRAY:\n");
+    for(i=0;i<size;i++)
+    {
+        printf("ENTER THE [%d] ELEMENT OF THE ARRAY:",i);
+        scanf("%d",&arr[i]);
+    }
+x=binarysearch(arr,size,element);
+printf("THE ELEMENT IS FOUND AT %d POSITION OF THE ARRAY:\n",x);
+return 0;
+}
