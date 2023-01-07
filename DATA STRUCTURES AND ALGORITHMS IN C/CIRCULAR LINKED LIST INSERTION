@@ -1,0 +1,112 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+struct Node
+{
+    int data;
+    struct Node *next;
+};
+// FUNCTION FOR TRAVERSAL IN A CIRCULAR LINKED LIST
+void linkedlistTraversal(struct Node *head)
+{
+    struct Node *ptr = head;
+    do
+    {
+        printf("ELEMENT:%d\n", ptr->data);
+        ptr = ptr->next;
+    } while (ptr != head);
+}
+// FUNCTION FOR INSERTION AT BEGINNING OF A CIRCULAR LINKED LIST
+struct Node *insertatfirst(struct Node *head, int data)
+{
+    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+    ptr->data = data;
+    struct Node *p = head->next;
+    while (p->next != head)
+    {
+        p = p->next;
+    }
+    // AT THIS POINT P POINTS TO THE LAST NODE OF THE CIRCULAR LINKED LIST
+    p->next = ptr;
+    ptr->next = head;
+    return ptr;
+}
+//FUNCTION FOR INSERTION IN BETWEEN IN A CIRCULAR LINKED LIST
+struct Node *insertatindex(struct Node *head,int index,int data)
+{
+    struct Node *ptr=(struct Node *)malloc(sizeof(struct Node));
+    struct Node *p=head;
+    ptr->data=data;
+    for (int i = 0; i < index-1; i++)
+    {
+        p=p->next;
+    }
+    ptr->next=p->next;
+    p->next=ptr;
+    return head;
+    
+}
+//FUNCTION FOR INSERTION AT THE END OF A CIRCULAR LINKED LIST
+struct Node *insertatend(struct Node *head,int data)
+{
+    struct Node *ptr=(struct Node *)malloc(sizeof(struct Node));
+    ptr->data=data;
+    struct Node *p=head->next;
+    while(p->next!=head)
+    {
+        p=p->next;
+    }
+    p->next=ptr;
+    ptr->next=head;
+    return head;
+
+} 
+//FUNCTION FOR INSERTION USING A GIVEN NODE IN A CIRCULAR LINKED LIST
+struct Node *insertafternode(struct Node *head,struct Node *prevnode,int data)
+{
+    struct Node *ptr=(struct Node *)malloc(sizeof(struct Node));
+    ptr->data=data;
+    ptr->next=prevnode->next;
+    prevnode->next=ptr;
+    return head;
+}
+//MAIN FUNCTION
+int main()
+{
+    struct Node *head;
+    struct Node *second;
+    struct Node *third;
+    struct Node *fourth;
+
+    // ALLOCATE MEMORY OF STRUCT NODE IN THE HEAP
+    head = (struct Node *)malloc(sizeof(struct Node));
+    second = (struct Node *)malloc(sizeof(struct Node));
+    third = (struct Node *)malloc(sizeof(struct Node));
+    fourth = (struct Node *)malloc(sizeof(struct Node));
+
+    // LINK HEAD TO SECOND NODE
+    head->data = 7;
+    head->next = second;
+
+    // LINK SECOND NODE TO THIRD NODE
+    second->data = 11;
+    second->next = third;
+
+    // LINK THIRD NODE TO FOURTH NODE
+    third->data = 41;
+    third->next = fourth;
+
+    // LINK THE FOURTH NODE TO THE HEAD NODE
+    fourth->data = 66;
+    fourth->next = head;
+
+    printf("THE CIRCULAR LINKED LIST BEFORE INSERTION IS:\n");
+    linkedlistTraversal(head);
+    //head = insertatfirst(head, 56);
+    //head=insertatindex(head,2,56);
+    //head=insertatend(head,56);
+    //head=insertafternode(head,third,56);
+    printf("THE CIRCULAR LINKED LIST AFTER INSERTION IS:\n");
+    linkedlistTraversal(head);
+    return 0;
+}
