@@ -1,0 +1,169 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+
+//STRUCTURE USED TO CREATE A STACK
+struct stack
+{
+    int size;
+    int top;
+    int *arr;
+};
+//FUNCTION TO CHECK IF STACK IS EMPTY
+int isempty(struct stack *ptr)
+{
+    if(ptr->top==-1)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+//FUNCTION TO CHECK IF STACK IS FULL
+int isfull(struct stack *ptr)
+{
+    if(ptr->top==ptr->size-1)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+//FUNCTION FOR INSERTION OF AN ELEMENT IN A STACK  OR  PUSH OPERATION
+void push(struct stack *ptr,int value)
+{
+    if(isfull(ptr))
+    {
+        printf("STACK OVERFLOW");
+    }
+    else
+    {
+        ptr->top++;
+        ptr->arr[ptr->top]=value;
+    }
+}
+//FUNCTION FOR DELETION OF AN ELEMENT IN A STACK  OR  POP OPERATION
+int pop(struct stack *ptr)
+{
+    if(isempty(ptr))
+    {
+        printf("STACK UNDERFLOW\n");
+        return -1;
+    }
+    else
+    {
+        int value=ptr->arr[ptr->top];
+        ptr->top--;
+        return value;
+    }
+}
+//FUNCTION FOR DISPLAYING THE TOP ELEMENT OF THE STACK  OR  PEEK OPERATION
+int peek(struct stack *ptr)
+{
+    if(isempty(ptr))
+    {
+        printf("STACK UNDERFLOW:\n");
+    }
+    else
+    {
+        return ptr->arr[ptr->top];
+    }
+}
+//FUNCTION FOR STACK TOP
+int stacktop(struct stack *ptr)
+{
+    return ptr->arr[ptr->top];
+}
+//FUNCTION FOR STACK BOTTOM
+int stackbottom(struct stack *ptr)
+{
+    return ptr->arr[0];
+}
+//MAIN FUNCTION
+int main()
+{
+    struct stack *ptr=(struct stack *)malloc(sizeof(struct stack));
+    ptr->size=10;
+    ptr->top=-1;
+    ptr->arr=(int *)malloc(ptr->size*sizeof(int));
+    printf("STACK HAS BEEN CREATED SUCCESSFULLY\n");
+    int choice,num,value;
+    printf("PRESS 1. TO PERFORM PUSH OPERATION:\n");
+    printf("PRESS 2. TO PERFORM POP OPERATION:\n");
+    printf("PRESS 3. TO PERFORM PEEK OPERATION:\n");
+    printf("PRESS 4. TO DISPLAY ALL THE STACK ELEMENTS:\n");
+    printf("PRESS 5. TO DISPLAY THE TOP MOST ELEMENT OF THE STACK:\n");
+    printf("PRESS 6. TO DISPLAY THE BOTTOM MOST ELEMENT OF THE STACK:\n");
+    printf("PRESS 7. TO EXIT THE PROGRAM:\n");
+
+    while(1)
+{
+    printf("ENTER YOUR CHOICE:\n");
+    scanf("%d",&choice);
+    switch(choice)
+    {
+        case 1:
+        {
+            printf("ENTER THE ELEMENT TO BE PUSHED:\n");
+            scanf("%d",&num);
+            push(ptr,num);
+            printf("THE ELEMENT %d HAS BEEN PUSHED INTO THE STACK:\n",num);
+            break;
+        }
+        case 2:
+        {
+            value=pop(ptr);
+            printf("THE ELEMENT %d HAS BEEN POPPED FROM THE STACK:\n",value);
+            break;
+        }
+        case 3:
+        {
+            printf("THE TOP MOST ELEMENT IS %d\n",peek(ptr));
+            break;
+        }
+        case 4:
+        {
+            if(isempty(ptr))
+            {
+                printf("THE STACK IS EMPTY:\n");
+                
+            }
+            else
+            {
+                printf("THE STACK ELEMENTS ARE:\n");
+                for(int i=ptr->top;i>=0;i--)
+                {
+                    printf("%d\n",ptr->arr[i]);
+                }
+                printf("\n");
+            }
+            break;
+        }
+        case 5:
+        {
+            int x=stacktop(ptr);
+            printf("THE TOP MOST ELEMENT OF THE STACK IS %d\n",x);
+            break;
+        }
+        case 6:
+        {
+            int y=stackbottom(ptr);
+            printf("THE BOTTOM MOST ELEMENT OF THE STACK IS %d\n",y);
+            break;
+        }
+        case 7:
+        {
+            exit(0);
+        }
+        default:
+        {
+            printf("INVALID INPUT\n");
+        }
+    }
+}  
+    return 0;
+}
