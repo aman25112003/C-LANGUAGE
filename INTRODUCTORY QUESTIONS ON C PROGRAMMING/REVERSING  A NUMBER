@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int a,b,sum=0;
+    printf("ENTER THE NUMBER THAT NEEDS TO BE REVERSED");
+    scanf("%d",&a);
+    while(a!=0)
+    {
+        b=a%10;
+        sum=(sum*10)+b;
+        a=a/10;
+    }
+    printf("THE REVERSED NUMBER IS %d",sum);
+}
