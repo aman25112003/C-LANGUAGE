@@ -1,0 +1,202 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+struct queue
+{
+    int size;
+    int f;//f->front
+    int r;//r->rear
+    int *arr;
+};
+//FUNCTION TO CHECK IF DOUBLE ENDED QUEUE IS FULL
+int isfull(struct queue *q)
+{
+    if(q->r==q->size-1)
+    {return 1;}
+    else
+    {
+        return 0;
+    }
+}
+//FUNCTION TO CHECK IF DOUBLE ENDED QUEUE IS EMPTY
+int isempty(struct queue *q)
+{
+    if(q->f==q->r)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+//FUNCTION FOR ENQUEUE AT REAR IN A DOUBLE ENDED QUEUE  OR  INSERTION AT REAR IN A DOUBLE ENDED QUEUE
+void enQueueRear(struct queue *q,int data)
+{
+    if(isfull(q))
+    {
+        printf("QUEUE OVERFLOW:\n");
+    }
+    else
+    {
+        q->r++;
+        q->arr[q->r]=data;
+    }
+}
+//FUNCTION FOR DEQUEUE AT FRONT IN A DOUBLE ENDED QUEUE  OR  DELETION AT FRONT IN A DOUBLE ENDED QUEUE
+int deQueueFront(struct queue *q)
+{
+    int a=-1;
+    if(isempty(q))
+    {
+        printf("QUEUE UNDERFLOW\n");
+    }
+    else
+    {
+        q->f++;
+        a=q->arr[q->f];
+        return a;    
+    }
+}
+//FUNCTION FOR ENQUEUE AT FRONT IN A DOUBLE ENDED QUEUE  OR  INSERTION AT FRONT IN A DOUBLE ENDED QUEUE
+void enQueueFront(struct queue *q,int data)
+{
+    if(isfull(q))
+    {
+        printf("QUEUE OVERFLOW:\n");
+    }
+    else
+    {
+        q->arr[q->f]=data;
+        q->f--;
+    }
+}
+//FUNCTION FOR DEQUEUE AT REAR IN A DOUBLE ENDED QUEUE  OR  DELETION AT REAR IN A DOBULE ENDED QUEUE
+int deQueueRear(struct queue *q)
+{
+    int a=-1;
+    if(isempty(q))
+    {
+        printf("QUEUE UNDERFLOW\n");
+    }
+    else
+    {
+        a=q->arr[q->r];
+        q->r--;
+        return a;    
+    }
+}
+//FUNCTION FOR PEEK OPERATION
+int peek(struct queue *q)
+{
+    if(isempty(q))
+    {
+        printf("THE QUEUE IS EMPTY\n");
+        return -1;
+    }
+    else
+    {
+       return q->arr[q->f];
+    }
+}
+//FUNCTION FOR DISPLAYING ALL THE ELEMENTS IN THE QUEUE
+void display(struct queue *q)
+{
+    for(int i=q->f+1;i<=q->r;i++)
+    {
+        printf("%d\n",q->arr[i]);    
+    }
+}
+//MAIN FUNCTION
+int main()
+{
+    struct queue q;
+    q.size=100;
+    q.f=-1;
+    q.r=-1;
+    q.arr=(int *)malloc(q.size*sizeof(int));
+    printf("QUEUE HAS BEEN CREATED SUCCESSFULLY:\n");
+    int choice,value,num;
+    printf("PRESS 1.TO ENQUEUE AT REAR:\n");
+    printf("PRESS 2.TO DEQUEUE AT FRONT:\n");
+    printf("PRESS 3.TO DEQUEUE AT REAR:\n");
+    printf("PRESS 4.TO ENQUEUE AT FRONT:\n");
+    printf("PRESS 5.TO PEEK:\n");
+    printf("PRESS 6.TO DISPLAY ALL THE ELEMENTS IN THE QUEUE:\n");
+    printf("PRESS 7.TO EXIT:\n");
+    while(1)
+    {
+        printf("ENTER YOUR CHOICE:\n");
+        scanf("%d",&choice);
+        switch(choice)
+        {
+            case 1:
+            {
+                printf("ENTER THE ELEMENT TO BE ENQUEUED:\n");
+                scanf("%d",&num);
+                enQueueRear(&q,num);
+                printf("THE %d ELEMENT HAS BEEN ENQUEUED AT REAR IN THE DOUBLE ENDED QUEUE:\n",num);
+                break;
+            }
+            case 2:
+            {
+                int x=deQueueFront(&q);
+                if(x>0)
+                {
+                    printf("THE ELEMENT %d HAS BEEN DEQUEUED FROM FRONT IN THE DOUBLE ENDED QUEUE:\n",x);
+                }
+                break;
+            }
+            case 3:
+            {
+                int z=deQueueRear(&q);
+                if(z>0)
+                {
+                    printf("THE ELEMENT %d HAS BEEN DEQUEUED FROM REAR IN THE DOUBLE ENDED QUEUE:\n",z);
+                }
+                break;           
+            }
+            case 4:
+            {
+                printf("ENTER THE ELEMENT TO BE ENQUEUED AT FRONT:\n");
+                scanf("%d",&value);
+                enQueueFront(&q,value);
+                printf("THE %d ELEMENT HAS BEEN ENQUEUED AT FRONT IN THE DOUBLE ENDED QUEUE:\n",value);
+                break;
+            }
+            case 5:
+            {
+                int y=peek(&q);
+                if(y>0)
+                {
+                    printf("THE ELEMENT AT THE FRONT OF THE QUEUE IS %d:\n",y);
+                }
+                break;
+            }
+            case 6:
+            {
+                if(q.f==q.r)
+                {
+                    printf("THE QUEUE IS EMPTY:\n");
+                }
+                else
+                {
+                    printf("THE ELEMENTS OF THE QUEUE ARE:\n");
+                    display(&q);
+                    
+                }
+                break;
+            }
+            case 7:
+            {
+                exit(0);
+                break;
+            }
+            default:
+            {
+                printf("INVALID DETAILS ENTERED\n");
+            }
+        }
+    }
+        return 0;
+}
