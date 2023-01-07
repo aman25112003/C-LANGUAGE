@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    char c;
+    int a,b;
+    printf("ENTER THE OPERATOR");
+    scanf("%c",&c);
+    printf("ENTER THE OPERANDS");
+    scanf("%d\n%d",&a,&b);
+    switch(c)
+    {
+        case '+':
+        {
+            printf("%d + %d = %d",a,b,a+b);
+            break;
+        }
+        case '-':
+        {
+            printf("%d - %d = %d ",a,b,a-b);
+            break;
+        }
+        case '*':
+        {
+            printf("%d * %d = %d",a,b,a*b);
+            break;
+        }
+        case '/':
+        {
+            printf("%d / %d = %d ",a,b,a/b);
+            break;
+        }
+        default:
+        {
+            printf("UNEXPECTED OPERATOR OR OPERAND");
+        }
+return 0;
+    }
+
+}
