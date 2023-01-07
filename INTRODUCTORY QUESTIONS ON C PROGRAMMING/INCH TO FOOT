@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    float inch,foot;
+    printf("ENTER THE DISTANCE IN INCHES");
+    scanf("%f",&inch);
+    //1 INCH = 0.0833 FOOT
+    foot=inch*0.0833;
+    printf("THE DISTANCE IN FOOT IS %f",foot);
+    return 0;
+}
