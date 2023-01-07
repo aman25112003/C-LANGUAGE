@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int i,j,n,flag=1,flag1=0;
+    printf("ENTER THE NUMBER OF ELEMENTS IN THE ARRAY\n");
+    scanf("%d\n",&n);
+    int A[n],B[n],C[n];
+    for(i=0;i<n;i++)
+    {
+        printf("ELEMENT %d:\n",i);
+        scanf("%d",&A[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("THE %d ELEMENT OF THE ARRAY A IS %d:\n",i,A[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        B[i]=A[i];
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            if(A[i]==B[j])
+            {
+                C[j]=flag;
+                flag++;
+            }
+            
+        }
+        flag=1;
+    }
+    for(i=0;i<n;i++)
+    {
+        if(C[i]==2)
+        {
+            flag1++;
+        }
+    }
+    if(flag1>0)
+    {
+    printf("THE TOTAL NUMBER OF DUPLICATE ELEMENTS ARE %d",flag1);
+    }
+    else
+    {
+        printf("THERE ARE NO DUPLICATE ELEMENTS IN THE ARRAY");
+    }
+return 0;
+}
