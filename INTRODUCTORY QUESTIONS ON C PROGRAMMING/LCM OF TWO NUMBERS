@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int a,b,x,y,hcf,temp,LCM;
+    printf("ENTER THE TWO NUMBERS");
+    scanf("%d\n%d",&x,&y);
+    a=x;
+    b=y;
+    while(a!=0)
+    {
+        temp=a;
+        a=b%a;
+        b=temp;
+    }
+    hcf=b;
+    LCM=(x*y)/hcf;
+    printf("THE LCM OF THE TWO  NUMBERS IS %d",LCM);
+    return 0;
+}
