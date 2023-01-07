@@ -1,0 +1,277 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int i,x;
+    char c;
+    printf("ENTER THE ALPHABET");
+    scanf("%c",&c);
+    switch(c)
+    {
+        case 'a':
+        {
+            printf("VOWEL");
+            break;
+        }
+           case 'b':
+        {
+            printf("CONSONANT");
+            break;
+        }
+                case 'c':
+        {
+            printf("CONSONANT");
+            break;
+        }
+           case 'd':
+        {
+            printf("CONSONANT");
+            break;
+        }
+                case 'e':
+        {
+            printf("VOWEL");
+            break;
+        }
+           case 'f':
+        {
+            printf("CONSONANT");
+            break;
+        }
+                case 'g':
+        {
+            printf("CONSONANT");
+            break;
+        }
+           case 'h':
+        {
+            printf("CONSONANT");
+            break;
+        }
+                case 'i':
+        {
+            printf("VOWEL");
+            break;
+        }
+           case 'j':
+        {
+            printf("CONSONANT");
+            break;
+        }
+                case 'k':
+        {
+            printf("CONSONANT");
+            break;
+        }
+           case 'l':
+        {
+            printf("CONSONANT");
+            break;
+        }
+                case 'm':
+        {
+            printf("CONSONANT");
+            break;
+        }
+           case 'n':
+        {
+            printf("CONSONANT");
+            break;
+        }
+                case 'o':
+        {
+            printf("VOWEL");
+            break;
+        }
+           case 'p':
+        {
+            printf("CONSONANT");
+            break;
+        }
+                case 'q':
+        {
+            printf("CONSONANT");
+            break;
+        }
+           case 'r':
+        {
+            printf("CONSONANT");
+            break;
+        }
+                case 's':
+        {
+            printf("CONSONANT");
+            break;
+        }
+           case 't':
+        {
+            printf("CONSONANT");
+            break;
+        }
+                case 'u':
+        {
+            printf("VOWEL");
+            break;
+        }
+           case 'v':
+        {
+            printf("CONSONANT");
+            break;
+        }
+                case 'w':
+        {
+            printf("CONSONANT");
+            break;
+        }
+           case 'x':
+        {
+            printf("CONSONANT");
+            break;
+        }
+                case 'y':
+        {
+            printf("CONSONANT");
+            break;
+        }
+           case 'z':
+        {
+            printf("CONSONANT");
+            break;
+        }
+                case 'A':
+        {
+            printf("VOWEL");
+            break;
+        }
+           case 'B':
+        {
+            printf("CONSONANT");
+            break;
+        }
+                case 'C':
+        {
+            printf("CONSONANT");
+            break;
+        }
+           case 'D':
+        {
+            printf("CONSONANT");
+            break;
+        }
+                case 'E':
+        {
+            printf("VOWEL");
+            break;
+        }
+           case 'F':
+        {
+            printf("CONSONANT");
+            break;
+        }
+                case 'G':
+        {
+            printf("CONSONANT");
+            break;
+        }
+           case 'H':
+        {
+            printf("CONSONANT");
+            break;
+        }
+                case 'I':
+        {
+            printf("VOWEL");
+            break;
+        }
+           case 'J':
+        {
+            printf("CONSONANT");
+            break;
+        }
+                case 'K':
+        {
+            printf("CONSONANT");
+            break;
+        }
+           case 'L':
+        {
+            printf("CONSONANT");
+            break;
+        }
+                case 'M':
+        {
+            printf("CONSONANT");
+            break;
+        }
+           case 'N':
+        {
+            printf("CONSONANT");
+            break;
+        }
+                case 'O':
+        {
+            printf("VOWEL");
+            break;
+        }
+           case 'P':
+        {
+            printf("CONSONANT");
+            break;
+        }
+                case 'Q':
+        {
+            printf("CONSONANT");
+            break;
+        }
+           case 'R':
+        {
+            printf("CONSONANT");
+            break;
+        }
+                case 'S':
+        {
+            printf("CONSONANT");
+            break;
+        }
+           case 'T':
+        {
+            printf("CONSONANT");
+            break;
+        }
+                case 'U':
+        {
+            printf("VOWEL");
+            break;
+        }
+           case 'V':
+        {
+            printf("CONSONANT");
+            break;
+        }
+                case 'W':
+        {
+            printf("CONSONANT");
+            break;
+        }
+           case 'X':
+        {
+            printf("CONSONANT");
+            break;
+        }
+                case 'Y':
+        {
+            printf("CONSONANT");
+            break;
+        }
+           case 'Z':
+        {
+            printf("CONSONANT");
+            break;
+        }
+        default:
+        {
+            printf("INVALID ALPHABET");
+        }
+    }
+    return 0;
+}
