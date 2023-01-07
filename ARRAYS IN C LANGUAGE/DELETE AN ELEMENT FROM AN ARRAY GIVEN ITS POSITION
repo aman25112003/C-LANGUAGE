@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int i,n,x,A[100];
+    printf("ENTER THE NUMBER OF ELEMENTS IN THE ARRAY:\n");
+    scanf("%d\n",&n);
+    printf("\n\n");
+    printf("ENTER THE POSITION OF THE ELEMENT THAT IS NEEDED TO BE DELETED:\n");
+    scanf("%d\n",&x);
+    for(i=0;i<n;i++)
+    {
+        printf("ENTER THE %d ELEMENT OF THE ARRAY:\n",i);
+        scanf("%d",&A[i]);
+    }
+    printf("\n\n\n");
+    printf("THE ARRAY BEFORE DELETION OF THE ENTERED ELEMENT IS:\n");
+    for(i=0;i<n;i++)
+    {
+        printf("%d\n",A[i]);
+    }
+    printf("\n\n\n");
+    printf("THE ARRAY AFTER THE DELETION OF THE ENTERED ELEMENT IS :\n");
+for(i=0;i<n;i++)
+{
+    if(A[i]!=A[x-1])
+    {
+        printf("%d\n",A[i]);
+    }
+}
+return 0;
+}
