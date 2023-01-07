@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int i,j,n,m,o;
+    printf("ENTER THE NUMBER OF ELEMENTS IN THE ARRAY A ");
+    scanf("%d",&m);
+    printf("ENTER THE NUMBER OF ELEMENTS IN THE ARRAY B");
+    scanf("%d",&n);
+    int A[100],B[100],C[100];
+    for(i=0;i<m;i++)
+    {
+        printf("ELEMENT %d OF ARRAY A:",i);
+        scanf("%d",&A[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("THE ELEMENT %d OF THE ARRAY A IS %d\n",i,A[i]);
+    }
+    for(i=0;i<m;i++)
+    {
+        printf("ELEMENT %d OF ARRAY B:",i);
+        scanf("%d",&B[i]);
+    }
+    for(i=0;i<m;i++)
+    {
+        printf("THE ELEMENT %d OF THE ARRAY B IS %d\n",i,B[i]);
+    }
+    o=m+n;
+    for(i=0;i<m;i++)
+    {
+        C[i]=A[i];
+    }
+    for(j=0;j<n;j++)
+    {
+        C[i]=B[j];
+        i++;
+    }
+    for(i=0;i<o;i++)
+    {
+    printf("%d  ",C[i]);
+    }
+return 0;
+}
