@@ -1,0 +1,105 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+struct Node
+{
+    int data;
+    struct Node *next;//SELF POINTING STRUCTURE
+};
+//TRAVERSING A LINKED LIST
+void linkedlistTraversal(struct Node *ptr)
+{
+    while(ptr!=NULL)
+    {
+        printf("ELEMENT:%d\n",ptr->data);
+        ptr=ptr->next;
+    }
+}
+//CASE1:DELETION AT THE BEGINNING OF A LINKED LIST
+struct Node *DeleteAtFirst(struct Node *head)
+{
+    struct Node *ptr=(struct Node *)malloc(sizeof(struct Node));
+    ptr=head;
+    head=head->next;
+    free(ptr);
+    return head;
+} 
+//CASE2:DELETION AT A GIVEN INDEX OF A LINKED LIST
+struct Node *DeleteAtIndex(struct Node *head,int index)
+{
+    struct Node *p=head;
+    struct Node *q=head->next;
+    for(int i=0;i<index-1;i++)
+    {
+        p=p->next;
+        q=q->next;
+    }
+    p->next=q->next;
+    free(q);
+    return head;
+
+}
+//CASE3:DELETION OF THE LAST ELEMENT
+struct Node *DeleteAtLast(struct Node *head)
+{
+    struct Node *p=head;
+    struct Node *q=head->next;
+    while(q->next!=NULL)
+    {
+        p=p->next;
+        q=q->next;
+    }
+    p->next=NULL;
+    free(q);
+    return head;
+}
+//CASE4:DELETING AN ELEMENT FROM A GIVEN VALUE OF A LINKED LIST
+struct Node *DeleteByValue(struct Node *head,int value)
+{
+    struct Node *p=head;
+    struct Node *q=head->next;
+    while(q->data!=value&&q->next!=NULL)
+    {
+        p=p->next;
+        q=q->next;
+    }
+    if(q->data==value)
+    {
+        p->next=q->next;
+        free(q);
+    }
+    return head;
+}
+int main()
+{
+    struct Node *head;
+    struct Node *second;
+    struct Node *third;
+    struct Node *fourth;
+    //ALLOCATION FOR MEMORY FOR STRUCT NODE IN THE HEAP
+    head=(struct Node *)malloc(sizeof(struct Node));
+    second=(struct Node *)malloc(sizeof(struct Node));
+    third=(struct Node *)malloc(sizeof(struct Node));
+    fourth=(struct Node *)malloc(sizeof(struct Node));
+    //LINK HEAD NODE TO SECOND NODE
+    head->data=7;
+    head->next=second;
+    //LINK SECOND NODE TO THIRD NODE
+    second->data=11;
+    second->next=third;
+    //LINK THIRD NODE TO FOURTH NODE
+    third->data=41;
+    third->next=fourth;
+    //TERMINATE THE LINKED LIST FROM FOURTH NODE
+    fourth->data=66;
+    fourth->next=NULL;
+    printf("THE LINKED LIST BEFORE DELETION IS:\n");
+    linkedlistTraversal(head);
+    //head=DeleteAtFirst(head);
+    //head=DeleteAtIndex(head,2);
+    //head=DeleteAtLast(head);
+    //head=DeleteByValue(head,11);
+    printf("THE LINKED LIST AFTER THE DELETION IS:\n");
+    linkedlistTraversal(head);
+    return 0;
+}
