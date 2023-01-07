@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int a,b,sum;
+    printf("ENTER THE NUMBERS");
+    scanf("%d\t%d",&a,&b);
+    sum=a+b;
+    printf("THE SUM OF ENTERED NUMBERS IS %d",sum);
+    return 0;
+}
