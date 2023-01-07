@@ -1,0 +1,28 @@
+#include <stdio.h>
+struct student
+    {
+        int id;
+        int marks;
+        char fav_char;
+    };
+    
+int main()
+{
+   
+    struct student harry,ravi,shubham;
+    harry.id=1;
+    ravi.id=2;
+    shubham.id=3;
+
+    harry.marks=466;
+    ravi.marks=466;
+    shubham.marks=466;
+
+    harry.fav_char='p';
+    ravi.fav_char='p';
+    shubham.fav_char='p';
+    printf("HARRY GOT %d MARKS",harry.marks);
+
+
+    return 0;
+}
