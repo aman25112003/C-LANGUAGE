@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int a,b,ANSWER=1;
+    printf("ENTER THE NUMBERS");
+    scanf("%d\n%d",&a,&b);
+    while(b!=0)
+    {
+        ANSWER=ANSWER*a;
+        b--;
+    }
+    printf("THE RESULT IS %d",ANSWER);
+    return 0;
+}
