@@ -1,0 +1,30 @@
+/*
+     CALLBACK FUNCTIONS:
+     1. FUNCTION POINTERS ARE USED TO PASS A FUNCTION TO A FUNCTION
+     2. THIS PASSED FUNCTION CAN THEN BE CALLED AGAIN (HENCE THE NAME CALLBACK FUNCTION)
+     3. THIS PROVIDES PROGRAMMER TO WRITE LESS CODE TO DO MORE STUFF
+
+*/
+#include <stdio.h>
+#include <stdlib.h>
+int sum(int a, int b)
+{
+    return  a+b;
+}
+void greetHelloAndExecute(int(*fptr)(int,int))
+{
+    printf("HELLO USER\n");
+    printf("THE SUM OF 5 AND 7 IS %d\n",fptr(5,7));
+}
+void greetGmAndExecute(int(*fptr)(int,int))
+{
+    printf("GOOD MORNING USER\n");
+    printf("THE SUM OF 5 AND 7 IS %d\n",fptr(5,7));
+}
+int main(int argc, char const *argv[])
+{
+    int (*ptr)(int ,int);
+    ptr=&sum;
+    greetGmAndExecute(ptr);
+    return 0;
+}
