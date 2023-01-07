@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+union student
+{
+    int id;
+    int marks;
+    char fav_char;
+    char name[34];
+};
+int main()
+{
+    union student s1;
+    strcpy(s1.name,"harry");
+    s1.fav_char='u';
+    s1.marks=45;
+    s1.id=1;//ID WILL BE DISPLAYED CORRECTLY AND ALL OTHER WILL BECOME CORRUPT SINCE UNION WILL GIVE ONLY ONE VARIABLE AT A TIME TO EXECUTE
+    printf("THE ID IS %d\n",s1.id);
+    printf("THE marks IS %d\n",s1.marks);
+    printf("THE fav char IS %d\n",s1.fav_char);
+    printf("THE name IS %d\n",s1.name);
+    return 0;
+    
+}
