@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int a,i;
+    printf("ENTER THE NUMBER");
+    scanf("%d",&a);
+    for(i=1;i<=a/2;i++)
+    {
+        if(a%i==0)
+        {
+            printf("%d  IS A FACTOR OF %d\n",i,a);
+            
+        }
+    }
+    return 0;
+}
