@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main()
+{
+    int chars,i=0;
+    char *ptr;
+    char a,b;
+    //printf("ENTER THE NUMBER OF CHARACTERS IN YOUR EMPLOYEE ID: %d\n");
+    while(i<3)
+    {
+    printf("ENTER THE NUMBER OF CHARACTERS IN YOUR EMPLOYEE ID: \n");
+    scanf("%d",&chars);
+    getchar();
+    printf("ENTER THE VALUE OF a:\n");
+    scanf("%s",&a);
+    getchar();
+    printf("ENTER THE VALUE OF b:");
+    scanf("%s",&b);
+    ptr=(char *)malloc((chars+1)*sizeof(char));
+    printf("ENTER YOUR EMPLOYEE ID:\n");
+    scanf("%s",ptr);
+    printf("YOUR EMPLOYEE ID IS:%s\n",ptr);
+    free(ptr);
+    i=i+1;
+    }
+    return 0;
+}
