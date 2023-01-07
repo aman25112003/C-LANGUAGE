@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+//FUNCTION FOR ARRAY REVERSAL
+void arrayreverse(int arr[],int x)
+{
+    int i,temp;
+    
+    for(i=0;i<(x/2);i++)
+    {
+        temp=arr[i];
+        arr[i]=arr[(x-1)-i];
+        arr[(x-1)-i]=temp;
+    }
+}
+//MAIN FUNCTION
+int main()
+{
+    int arr[100],x,i;
+    printf("ENTER THE NUMBER OF ELEMENTS IN THE ARRAY:\n");
+    scanf("%d",&x);
+    printf("ENTER THE ARRAY:\n");
+    for(i=0;i<x;i++)
+    {
+        printf("ENTER THE %d element of the array:",i);
+        scanf("%d",&arr[i]);
+    }
+    arrayreverse(arr,x);
+    printf("THE ARRAY AFTER REVERSAL IS:\n");
+    for(i=0;i<x;i++)
+    {
+        printf("%d\t",arr[i]);
+    }
+    return 0;
+
+}
