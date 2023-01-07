@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int a;
+    printf("ENTER THE NUMBER WHICH NEEDS TO BE CHECKED AS EVEN OR ODD");
+    scanf("%d",&a);
+    if(a%2==0)
+    {
+        printf("THE NUMBER IS EVEN");
+    }
+    else if(a==1)
+    {
+        printf("COMPOSITE NUMBER");
+    }
+    else
+    {
+        printf("THE NUMBER IS ODD");
+    }
+    return 0;
+}
