@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int i,n,A[100],x,flag=0;
+    printf("ENTER THE ELEMENT WHOSE FREQUENCY IS REQUIRED");
+    scanf("%d",&x);
+    printf("ENTER THE NUMBER OF ELEMENTS IN THE ARRAY");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("ENTER THE %d ELEMENT OF THE ARRAY:\n",i);
+        scanf("%d",&A[i]);
+    }
+    printf("THE ENTERED ARRAY IS:\n");
+    for(i=0;i<n;i++)
+    {
+        printf("%d\n",A[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        if(x==A[i])
+        {
+            flag++;
+        }
+    }
+    if(flag>0)
+    {
+        printf("THE FREQUENCY OF THE ENTERED ELEMENT IS:%d",flag);
+    }
+    else
+    {
+        printf("THE ELEMENT DOES NOT OCCUR IN THE ARRAY");
+    }
+    return 0;
+}
