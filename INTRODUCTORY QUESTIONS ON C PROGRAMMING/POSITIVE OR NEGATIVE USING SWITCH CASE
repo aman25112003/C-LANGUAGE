@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int a;
+    printf("ENTER THE NUMBER");
+    scanf("%d",&a);
+    switch(a>0)
+    {
+        case 1:
+        {
+            printf("THE ENTERED NUMBER IS POSITIVE");
+            break;
+        }
+        case 0:
+        {
+        switch(a<0)
+        {
+            case 1:
+            {
+                printf("THE ENTERED NUMBER IS NEGATIVGE");
+                break;
+            }
+            case 0:
+            {
+                printf("THE ENTERED NUMBER IS 0");
+                break;
+            }
+        }
+        break;
+        }
+        default:
+        {
+                printf("INVALID DATA");
+        }
+        
+        return 0;
+    }
+}
