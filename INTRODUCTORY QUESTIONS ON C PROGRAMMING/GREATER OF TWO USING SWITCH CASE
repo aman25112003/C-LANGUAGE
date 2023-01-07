@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int a,b;
+    printf("ENTER THE FIRST NUMBER");
+    scanf("%d",&a);
+    printf("ENTER THE SECOND NUMBER");
+    scanf("%d",&b);
+    switch(a>b)
+    {
+        case 0:
+        {
+            printf("%d IS GREATER",b);
+            break;
+        }
+        case 1:
+        {
+            printf("%d IS GREATER",a);
+            break;
+        }
+        default:
+        {
+            printf("BOTH NUMBERS ARE EQUAL");
+        }
+    }
+    return 0;
+}
