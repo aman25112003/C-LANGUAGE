@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int n,i,j,A[100],C[100],flag;
+    printf("ENTER THE NUMBER OF ELEMENTS IN THE ARRAY\n");
+    scanf("%d\n",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("ELEMENT %d:\n",i);
+        scanf("%d",&A[i]);
+        C[i]=1;
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("THE %d ELEMENT OF THE ARRAY IS %d\n",i,A[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        flag=1;
+        for(j=i+1;j<n;j++)
+        {
+            
+            
+                if(A[i]==A[j])
+                {
+                    flag++;
+                    C[j]=0;
+                    
+                }
+            
+            if(C[i]!=0)
+            {
+            C[i]=flag;
+            }
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        if(C[i]!=0)
+        {
+            printf("%d OCCURS %d TIMES\n",A[i],C[i]);
+        }
+    }
+    return 0;
+}
