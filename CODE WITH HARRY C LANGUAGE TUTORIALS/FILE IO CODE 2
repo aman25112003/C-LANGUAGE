@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    FILE *ptr=NULL;
+    ptr=fopen("myfile.txt","a+");
+    //FGETC EXPLANANTION
+    //char c=fgetc(ptr);
+    //printf("THE CHARACTER I READ WAS %c\n",c);
+    //c=fgetc(ptr);
+    //printf("THE CHARACTER I READ WAS %c\n",c);
+    //fclose(ptr);
+    
+    //FGETS EXPLANANTION
+    //char str[4];
+    //fgets(str,5,ptr);
+    //printf("THE STRING IS %s\n",str);
+    //fclose(ptr);
+
+    //FPUTC EXPLANATION
+    //fputc('o',ptr);
+    //fclose(ptr);
+
+    //FPUTS EXPLANATION
+    //fputs("THIS IS AMAN",ptr);
+    //fclose(ptr);
+    return 0;
+}
