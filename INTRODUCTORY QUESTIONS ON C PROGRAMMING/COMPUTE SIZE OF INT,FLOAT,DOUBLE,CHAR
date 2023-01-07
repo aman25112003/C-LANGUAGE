@@ -1,0 +1,8 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int x=sizeof(int),y=sizeof(float),z=sizeof(double),a=sizeof(char);
+    printf("THE SIZE OF INT IS %d\nTHE SIZE OF FLOAT IS %d\nTHE SIZE OF DOUBLE IS %d\nTHE SIZE OF CHAR IS %d",x,y,z,a);
+    return 0;
+}
