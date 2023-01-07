@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int a;
+    printf("ENTER THE NUMBER");
+    scanf("%d",&a);
+    switch(a%2==0)
+    {
+        case 1:
+        {
+            printf("THE ENTERED NUMBER IS EVEN");
+            break;
+        }
+        case 0:
+        {
+            printf("THE ENTERED NUMBER IS ODD");
+            break;
+        }
+        default:
+        {
+            printf("ENTERED NUMBER IS INVALID");
+        }
+        return 0;
+    }
+}
