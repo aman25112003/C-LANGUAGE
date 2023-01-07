@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(int argc, char *argv[])
+{
+    char *operation;
+    int num1,num2;
+    operation=argv[1];
+    num1=atoi(argv[2]);
+    num2=atoi(argv[3]);
+    printf("OPERATION IS %s\n",operation);
+    printf("NUM1 IS %d\n",num1);
+    printf("NUM2 IS %d\n",num2);
+    if(strcmp(operation,"add")==0)
+    {
+        printf("%d\n",num1+num2);
+    }
+     else if(strcmp(operation,"subtract")==0)
+    {
+        printf("%d\n",num1-num2);
+    }
+     else if(strcmp(operation,"multiply")==0)
+    {
+        printf("%d\n",num1*num2);
+    }
+     else if(strcmp(operation,"divide")==0)
+    {
+        printf("%d\n",num1/num2);
+    }
+    //RUN THE PROGRAM IN TERMINAL BY ENTERING .\COMMAND_LINE_CALCULATOR_EXERCISE.exe <operation> <num1> <num2>
+   return 0;
+}
+
