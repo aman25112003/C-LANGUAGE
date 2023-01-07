@@ -1,0 +1,18 @@
+//WE CAN HAVE POINTERS POINTING TO FUNCTIONS AS WELL
+//FUNCTION POINTERS POINT TO CODE AND NOT DATA
+//FUNCTION POINTERS ARE USEFUL TO IMPLEMENT CALLBACK FUNCTIONS
+//UNLIKE NORMAL POINTERS , WE DO NOT ALLOCATE DE- ALLOCATE MEMORY USING FUNCTION POINTERS
+#include <stdio.h>
+int sum(int a, int b)
+{
+    return a+b;
+}
+int main(int argc, char const *argv[])
+{
+    printf("THE SUM OF 1 AND 2 IS %d\n",sum(1,2));//TO TEST THE FUNCTION
+    int (*fptr)(int ,int );//DECLARING A FUNCTION POINTER 
+    fptr=&sum;//FPTR IS A FUNCTION POINTER HERE
+    int d= (*fptr)(4,6);
+    printf("THE VALUE OF d IS %d",d);
+    return 0;
+}
