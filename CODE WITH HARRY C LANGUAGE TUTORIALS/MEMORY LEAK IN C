@@ -1,0 +1,32 @@
+/*
+    MEMORY LEAK IN C:
+
+    CAUSES OF MEMORY LEAK:
+    1. WITH GREAT POWER COMES GREAT RESPONSIBILITY
+    2. MEMORY LEAK IS CAUSED WHEN WE DON'T USE DYNAMIC MEMORY PROPERLY
+    3. WHEN WE KEEP ON ALLOCATING MEMORY IN THE HEAP WITHOUT FREEING , THE OVERALL MEMORY USAGE KEEPS ON INCREASING 
+    4. THIS SITUATION IS THE CAUSE OF MEMORY LEAK i.e THE PROGRAMMER CREATES A MEMORY BLOCK IN THE MEMORY AND FORGETS TO DELETE IT
+    5. TO AVOID THESE MEMORY LEAK SITUATION , MEMORY ALLOCATED ON HEAP SHOULD ALWAYS BE FREED WHEN NOT NEEDED
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(int argc, char const *argv[])
+{
+    int a,i=0;
+    int *i2;
+    while(i<4555)
+    {
+        printf("WELCOME TO CODE WITH HARRY\n");
+        i2=malloc(34444*sizeof(int));
+        if(i%100==0)
+        {
+            getchar();
+        }
+        i++;
+        
+
+    }   
+    free(i2);//TO ENCOUNTER THE SITUATION OF MEMORY LEAK
+    return 0;
+}
