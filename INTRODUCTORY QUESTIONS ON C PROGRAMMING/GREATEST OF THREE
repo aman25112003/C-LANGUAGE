@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int a,b,c;
+    printf("ENTER THE THREE NUMBERS");
+    scanf("%d\n%d\n%d",&a,&b,&c);
+    if(a>b&&a>c)
+    {
+        printf("THE GREATEST OF THREE IS %d",a);
+    }
+    else if(b>a&&b>c)
+    {
+        printf("THE GREATEST OF THREE IS %d",b);
+    }
+    else
+    {
+        printf("THE GREATEST OF THREE IS %d",c);
+    }
+    return 0;
+}
