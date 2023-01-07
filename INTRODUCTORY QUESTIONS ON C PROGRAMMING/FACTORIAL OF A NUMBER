@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int  x,i,fact=1;
+    printf("ENTER THE NUMBER WHOSE FACTORIAL IS NEEDED");
+    scanf("%d",&x);
+    for(i=1;i<=x;i++)
+    {
+        fact=fact*i;
+    }
+    printf("%d",fact);
+    return 0;
+}
