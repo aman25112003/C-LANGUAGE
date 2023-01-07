@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(int argc, char const *argv[])
+{
+    char str[20];
+    int i,len,temp=0;
+    printf("ENTER A STRING\n");
+    scanf("%s",str);
+    len=strlen(str);
+    for(i=0;i<len;i++)
+    {
+        if(str[i]!=str[len-i-1])
+        {
+            temp=1;
+            break;
+        }
+    }
+    if(temp==0)
+    {
+        printf("THE STRING IS PALINDROME\n");
+    }
+    else
+    {
+        printf("THE STRING IS NOT PALINDROME\n");
+    }
+    return 0;
+}
