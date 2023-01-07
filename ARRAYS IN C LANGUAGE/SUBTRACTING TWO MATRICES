@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int i,j,n=1,m=1,A[100][100],B[100][100],C[100][100];
+    printf("ENTER THE NUMBER OF ROWS IN THE TWO ARRAYS TO BE ADDED:\n");
+    scanf("%d",&n);
+    printf("ENTER THE NUMBER OF COLUMNS IN THE TWO ARRAYS TO BE ADDED :\n");
+    scanf("%d",&m);
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            printf("ENTER THE [%d][%d] ELEMENT OF THE FIRST ARRAY:\n",i,j);
+            scanf("%d",&A[i][j]);
+        }
+    }
+  
+    printf("THE FIRST MATRIX IS:\n");
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            printf("%d\t",A[i][j]);
+            
+        }
+        printf("\n");
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            printf("ENTER THE [%d][%d] ELEMENT OF THE SECOND ARRAY:\n",i,j);
+            scanf("%d",&B[i][j]);
+        }
+    }
+  
+    printf("THE SECOND MATRIX IS:\n");
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            printf("%d\t",B[i][j]);
+            
+        }
+        printf("\n");
+    }
+for(i=0;i<n;i++)
+{
+    for(j=0;j<m;j++)
+    {
+        C[i][j]=A[i][j]-B[i][j];
+    }
+}
+printf("\n\n");
+printf("THE ADDITION OF THE TWO MATRIX IS:\n");
+for(i=0;i<n;i++)
+{
+    for(j=0;j<m;j++)
+    {
+        printf("%d\t",C[i][j]);
+    }
+    printf("\n");
+}
+return 0;
+
+}
