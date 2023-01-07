@@ -1,0 +1,99 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+struct Node
+{
+    int data;
+    struct Node *next;
+};
+//TRAVERSING A LINKED LIST
+void linkedlistTraversal(struct Node *ptr)
+{
+    while(ptr!=NULL)
+    {
+        printf("ELEMENT:%d\n",ptr->data);
+        ptr=ptr->next;
+    }
+}
+//CASE1:INSERTION AT THE BEGINNING OF THE LINKED LIST
+struct Node *InsertAtFirst(struct Node *head,int data)
+{
+    struct Node *ptr=(struct Node *)malloc(sizeof(struct Node));
+    ptr->data=data;
+    ptr->next=head;
+    return ptr;
+}
+//CASE2:INSERTION IN BETWEEN THE LINKED LIST
+struct Node *InsertAtIndex(struct Node *head,int data,int index)
+{
+    struct Node *ptr=(struct Node *)malloc(sizeof(struct Node));
+    struct Node *p=head;
+    int i=0;
+    while(i!=index-1)
+    {
+        p=p->next;
+        i++;
+    }
+    ptr->data=data;
+    ptr->next=p->next;
+    p->next=ptr;
+    return head;
+}
+//CASE3:INSERTION AT THE END OF THE LINKED LIST
+struct Node *InsertAtEnd(struct Node *head,int data)
+{
+    struct Node *ptr=(struct Node *)malloc(sizeof(struct Node));
+    ptr->data=data;
+    struct Node *p=head;
+    while(p->next!=NULL)
+    {
+        p=p->next;
+    }
+    ptr->next=NULL;
+    p->next=ptr;
+    return head;
+}
+//CASE4:INSERTION AFTER A NODE IN LINKED LIST
+struct Node *InserAfterNode(struct Node *head,struct Node *prevnode,int data)
+{
+    struct Node *ptr=(struct Node *)malloc(sizeof(struct Node));
+    ptr->data=data;
+    ptr->next=prevnode->next;
+    prevnode->next=ptr;
+    return head;
+}
+//MAIN FUNCTION
+int main()
+{
+    struct Node *head;
+    struct Node *second;
+    struct Node *third;
+    struct Node *fourth;
+    //ALLOCATION OF MEMORY FOR STRUCT NODE IN HEAP
+    head=(struct Node *)malloc(sizeof(struct Node));
+    second=(struct Node *)malloc(sizeof(struct Node));   
+    third=(struct Node *)malloc(sizeof(struct Node));
+    fourth=(struct Node *)malloc(sizeof(struct Node)); 
+    //LINK HEAD TO SECOND NODE 
+    head->data=7;
+    head->next=second;
+    //LINK SECOND AND THIRD NODE
+    second->data=11;
+    second->next=third;
+    //LINK THIRD AND FOURTH NODE
+    third->data=41;
+    third->next=fourth;
+    //TERMINATE THE LINKED LIST AT FOURTH NODE
+    fourth->data=66;
+    fourth->next=NULL;
+    printf("LINKED LIST BEFORE INSERTION IS:\n");
+    linkedlistTraversal(head);
+    //head=InsertAtFirst(head,56);
+    //head=InsertAtIndex(head,56,2);
+    //head=InsertAtEnd(head,56);
+    head=InserAfterNode(head,third,56);
+    printf("LINKED LIST AFTER INSERTION IS:\n");
+    linkedlistTraversal(head);
+   
+    return 0;
+}
