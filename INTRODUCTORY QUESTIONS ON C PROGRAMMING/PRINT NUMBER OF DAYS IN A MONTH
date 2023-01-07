@@ -1,0 +1,77 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int a;
+    printf("ENTER THE MONTH NUMBER");
+    scanf("%d",&a);
+    switch(a)
+    {
+        case 1:
+        {
+            printf("IT IS JANUARY AND IT HAS 31 DAYS");
+            break;
+        }
+         case 2:
+        {
+            printf("IT IS FEBRUARY AND IT HAS 29 DAYS");
+            break;
+        }
+         case 3:
+        {
+            printf("IT IS MARCH AND IT HAS 31 DAYS");
+            break;
+        }
+         case 4:
+        {
+            printf("IT IS APRIL AND IT HAS 30 DAYS");
+            break;
+        }
+         case 5:
+        {
+            printf("IT IS MAY AND IT HAS 31 DAYS");
+            break;
+        }
+         case 6:
+        {
+            printf("IT IS JUNE AND IT HAS 30 DAYS");
+            break;
+        }
+         case 7:
+        {
+            printf("IT IS JULY AND IT HAS 31 DAYS");
+            break;
+        }
+         case 8:
+        {
+            printf("IT IS AUGUST AND IT HAS 31 DAYS");
+            break;
+        }
+         case 9:
+        {
+            printf("IT IS SETEMBER AND IT HAS 30 DAYS");
+            break;
+        }
+         case 10:
+        {
+            printf("IT IS OCTOBER AND IT HAS 31 DAYS");
+            break;
+        }
+         case 11:
+        {
+            printf("IT IS NOVEMBER AND IT HAS 30 DAYS");
+            break;
+        }
+         case 12:
+        {
+            printf("IT IS DECEMBER AND IT HAS 31 DAYS");
+            break;
+        }
+        default:
+        {
+            printf("THE ENTERED MONTH NUMBER IS INVALID");
+        }
+      
+    }
+return 0;
+}
