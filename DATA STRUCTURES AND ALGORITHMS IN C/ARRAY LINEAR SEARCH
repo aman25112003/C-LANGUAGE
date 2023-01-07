@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <conio.h>
+//FUNCTION FOR LINEAR SEARCH
+int linearsearch(int arr[],int size,int element)
+{
+    int i;
+    for(i=0;i<size;i++)
+    {
+        if(arr[i]==element)
+        {
+            return i+1;
+        }
+    }
+}
+//MAIN FUNCTION
+int main()
+{
+    int i,x,arr[100],size,element;
+    printf("ENTER THE NUMBER OF ELEMENTS IN THE ARRAY:\n");
+    scanf("%d",&size);
+    printf("ENTER THE ELEMENT WHICH NEEDS TO BE SEARCHED:\n");
+    scanf("%d",&element);
+    printf("\t\t\t\t\t ENTER THE ARRAY:\n");
+    for(i=0;i<size;i++)
+    {
+        printf("ENTER THE [%d] ELEMENT OF THE ARRAY:",i);
+        scanf("%d",&arr[i]);
+    }
+x=linearsearch(arr,size,element);
+printf("THE ELEMENT IS FOUND AT %d POSITION OF THE ARRAY:\n",x);
+return 0;
+}
