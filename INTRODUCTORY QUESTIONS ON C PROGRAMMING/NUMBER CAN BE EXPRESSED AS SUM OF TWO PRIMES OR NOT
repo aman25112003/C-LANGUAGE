@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <conio.h>
+int prime_num(int num)
+{
+    int i;
+    for(i=2;i<=num;i++)
+    {
+        if(num%i!=0)
+        {
+            return num;
+            break;
+        }
+
+        else
+        {
+            return 0;
+        }
+    }
+}
+int main()
+{
+    int n,x,i,flag=0;
+    printf("ENTER THE NUMBER");
+    scanf("%d",&n);
+    for(i=2;i<=n;i++)
+    {
+        x=prime_num(i);
+        if(x==i)
+    {
+        if(prime_num(n-i)==(n-i))
+        {
+            flag=1;
+            break;
+        }
+        else
+        {
+            flag=0;
+        }
+    }
+    }
+    if(flag==1)
+    {
+        printf("THE ENTERED NUMBER CAN BE EXPRESSED AS SUM OF TWO PRIME NUMBERS");
+    }
+    else
+    {
+        printf("THE ENTERED NUMBER CANNOT BE EXPRESSED AS SUM OF TWO PRIME NUMBERS");
+    }
+    return 0;
+}
