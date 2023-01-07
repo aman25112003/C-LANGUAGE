@@ -1,0 +1,117 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+struct Node 
+{
+    int data;
+    struct Node *prev;
+    struct Node *next;
+};
+//FUNTION FOR TRAVERSAL IN A DOUBLY LINKED LIST
+void linkedlistTraversal(struct Node *head)
+{
+    struct Node *ptr=head;
+    do
+    {
+        printf("ELEMENT:%d\n",ptr->data);
+        ptr=ptr->next;
+    }
+    while(ptr!=NULL);
+}
+//CASE1: DELETION AT BEGINNING OF A DOUBLY LINKED LIST
+struct Node *deleteatfirst(struct Node *head)
+{
+    struct Node *ptr=head;
+    ptr->next=head->next;
+    head=head->next;
+    free(ptr);
+    head->prev=NULL;
+    return head;
+}
+//CASE2: DELETION AT A GIVEN INDEX OF A DOUBLY LINKED LIST 
+struct Node *deleteatindex(struct Node *head,int index)
+{
+    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+    struct Node *p = head;
+    struct Node *q = head->next;
+    for (int i = 0; i < index - 1; i++)
+    {
+        p = p->next;
+        q = q->next;
+    }
+    p->next = q->next;
+    free(q);
+    return head;
+}
+//CASE3: DELETION AT THE END OF A DOUBLY LINKED LIST
+struct Node *deleteatend(struct Node *head)
+{
+    struct Node *p = head;
+    struct Node *q = head->next;
+    while (q->next != NULL)
+    {
+        p = p->next;
+        q = q->next;
+    }
+    p->next = NULL;
+    free(q);
+    return head;
+}
+//CASE4: DELETION USING A GIVEN VALUE IN A DOUBLY LINKED LIST
+struct Node *deletebyvalue(struct Node *head,int value)
+{
+    struct Node *p = head;
+    struct Node *q = head->next;
+    while (q->data != value && q->next != NULL)
+    {
+        p = p->next;
+        q = q->next;
+    }
+    if (q->data == value)
+    {
+        p->next = q->next;
+        free(q);
+    }
+    return head;
+}
+//MAIN FUNCTION
+int main()
+{
+    struct Node *head;
+    struct Node *second;
+    struct Node *third;
+    struct Node *fourth;
+
+    //ALLOCATE THE MEMORY FOR STRUCT NODE IN THE HEAP
+
+    head=(struct Node *)malloc(sizeof(struct Node));
+    second=(struct Node *)malloc(sizeof(struct Node));
+    third=(struct Node *)malloc(sizeof(struct Node));
+    fourth=(struct Node *)malloc(sizeof(struct Node));
+
+    //LINK HEAD TO NULL AND SECOND NODE
+    head->prev=NULL;
+    head->data=7;
+    head->next=second;
+    //LINK SECOND TO HEAD AND THIRD NODE
+    second->prev=head;
+    second->data=11;
+    second->next=third;
+    //LINK THIRD NODE TO SECOND NODE AND FOURTH NODE
+    third->prev=second;
+    third->data=41;
+    third->next=fourth;
+    //LINK THE FOURTH NODE TO THIRD NODE AND NULL
+    fourth->prev=third;
+    fourth->data=66;
+    fourth->next=NULL;
+    printf("THE DOUBLY LINKED LIST BEFORE DELETION IS:\n");
+    linkedlistTraversal(head);
+    //head=deleteatfirst(head);
+    //head=deleteatindex(head,2);
+    //head=deleteatend(head);
+    head=deletebyvalue(head,11);
+    printf("THE DOUBLY LINKED LIST AFTER THE DELETION IS:\n");
+    linkedlistTraversal(head);
+    return 0;
+}
