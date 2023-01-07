@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <conio.h>
+void changeValue(int *address)
+{
+    *address=345;
+}
+int main()
+{
+    int a=34,b=74;
+    printf("THE VALUE OF a IS %d\n",a);
+    changeValue(&a);
+    printf("THE VALUE OF a IS %d",a);
+    return 0;
+}
