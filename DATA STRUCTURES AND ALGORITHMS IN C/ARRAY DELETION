@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <conio.h>
+//DISPLAY FUNCTION 
+int display(int arr[],int size)
+{
+    int i;
+    for(i=0;i<size;i++)
+    {
+        printf("%d\n",arr[i]);
+    }
+}
+//FUNCTION FOR  DELETION IN AN ARRAY
+int deletion_in_an_array(int arr[],int size,int element,int index,int capacity)
+{
+    int i;
+    if(size>=capacity)
+    {
+        return -1;
+    }
+    for(i=index;i<size-1;i++)
+    {
+        arr[i]=arr[i+1];
+    }
+    return 1;
+}
+//MAIN FUNCTION
+int main()
+{
+    int i,arr[100],size,index,element;
+    printf("ENTER THE NUMBER OF ELEMENTS IN THE ARRAY:\n");
+    scanf("%d",&size);
+    printf("ENTER THE ELEMENT WHICH NEEDS TO BE DELETED:\n");
+    scanf("%d",&element);
+    printf("ENTER THE INDEX AT WHICH THE ELEMENT NEEDS TO BE DELETED:\n");
+    scanf("%d",&index);
+    for(i=0;i<size;i++)
+    {
+        printf("ENTER THE [%d] ELEMENT OF THE ARRAY\n",i);
+        scanf("%d",&arr[i]);
+    }
+    printf("THE ARRAY BEFORE DELETION IS:\n");
+    display(arr,size);//CALLING DISPLAY FUNCTION
+    deletion_in_an_array(arr,size,element,index,100);//CALLING DELETION IN AN ARRAY FUNCTION
+    size--;
+    printf("THE ARRAY AFTER DELETION IS:\n");
+    display(arr,size);
+    return 0;
+}
