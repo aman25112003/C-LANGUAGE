@@ -1,0 +1,113 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+struct Node 
+{
+    int data;
+    struct Node *prev;
+    struct Node *next;
+};
+//FUNTION FOR TRAVERSAL IN A DOUBLY LINKED LIST
+void linkedlistTraversal(struct Node *head)
+{
+    struct Node *ptr=head;
+    do
+    {
+        printf("ELEMENT:%d\n",ptr->data);
+        ptr=ptr->next;
+    }
+    while(ptr!=NULL);
+}
+//CASE1: INSERTION AT BEGINNING OF A DOUBLY LINKED LIST
+struct Node *insertatfirst(struct Node *head,int data)
+{
+    struct Node *ptr=(struct Node *)malloc(sizeof(struct Node));
+    ptr->data=data;
+    ptr->prev=NULL;
+    ptr->next=head;
+    head->prev=ptr;
+    head=ptr;
+    return head;
+}
+//CASE2: INSERTION AT A GIVEN INDEX OF A DOUBLY LINKED LIST 
+struct Node *insertatindex(struct Node *head,int data,int index)
+{
+    struct Node *ptr=(struct Node *)malloc(sizeof(struct Node));
+    ptr->data=data;
+    struct Node *p=head;
+    for(int i=0;i<index-1;i++)
+    {
+        p=p->next;
+    }
+    ptr->next=p->next;
+    p->next=ptr;
+    ptr->prev=p;
+    return head;
+}
+//CASE3: INSERTION AT THE END OF A DOUBLY LINKED LIST
+struct Node *insertatend(struct Node *head,int data)
+{
+    struct Node *ptr=(struct Node *)malloc(sizeof(struct Node));
+    ptr->data=data;
+    struct Node *p=head;
+    while(p->next!=NULL)
+    {
+        p=p->next;
+    }
+    ptr->next=NULL;
+    p->next=ptr;
+    ptr->prev=p;
+    return head;
+}
+//CASE4: INSERTION AFTER A GIVEN NODE
+struct Node *insertafternode(struct Node *head,struct Node *prevnode,int data)
+{
+    struct Node *ptr=(struct Node *)malloc(sizeof(struct Node));
+    ptr->data=data;
+    ptr->next=prevnode->next;
+    prevnode->next=ptr;
+    ptr->prev=prevnode;
+    return head;
+}
+
+//MAIN FUNCTION
+int main()
+{
+    struct Node *head;
+    struct Node *second;
+    struct Node *third;
+    struct Node *fourth;
+
+    //ALLOCATE THE MEMORY FOR STRUCT NODE IN THE HEAP
+
+    head=(struct Node *)malloc(sizeof(struct Node));
+    second=(struct Node *)malloc(sizeof(struct Node));
+    third=(struct Node *)malloc(sizeof(struct Node));
+    fourth=(struct Node *)malloc(sizeof(struct Node));
+
+    //LINK HEAD TO NULL AND SECOND NODE
+    head->prev=NULL;
+    head->data=7;
+    head->next=second;
+    //LINK SECOND TO HEAD AND TO THIRD NODE
+    second->prev=head;
+    second->data=11;
+    second->next=third;
+    //LINK THIRD NODE TO SECOND AND TO FOURTH NODE
+    third->pev=second;
+    third->data=41;
+    third->next=fourth;
+    //LINK THE FOURTH NODE TO THIRD NODE AND NULL
+    fourth->prev=third;
+    fourth->data=66;
+    fourth->next=NULL;
+    printf("THE DOUBLY LINKED LIST BEFORE INSERTION IS:\n");
+    linkedlistTraversal(head);
+    //head=insertatfirst(head,56);
+    //head=insertatindex(head,56,2);
+    //head=insertatend(head,56);
+    //head=insertafternode(head,second,56);
+    printf("THE DOUBLY LINKED LIST AFTER THE INSERTION IS:\n");
+    linkedlistTraversal(head);
+    return 0;
+}
