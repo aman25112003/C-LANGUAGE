@@ -1,0 +1,117 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+struct Node
+{
+    int data;
+    struct Node *next;
+};
+// FUNCTION FOR TRAVERSAL IN A CIRCULAR LINKED LIST
+void linkedlistTraversal(struct Node *head)
+{
+    struct Node *ptr = head;
+    do
+    {
+        printf("ELEMENT:%d\n", ptr->data);
+        ptr = ptr->next;
+    } while (ptr != head);
+}
+// FUNCTION FOR DELETION AT BEGINNING OF A CIRCULAR LINKED LIST
+struct Node *deleteatfirst(struct Node *head)
+{
+    struct Node *ptr=head->next;
+    while(ptr->next!=head)
+    {
+        ptr=ptr->next;
+    }
+    ptr->next=head->next;
+    free(head);
+    head=ptr->next;
+    return head;
+}
+// FUNCTION FOR DELETION IN BETWEEN IN A CIRCULAR LINKED LIST
+struct Node *deleteatindex(struct Node *head, int index)
+{
+    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+    struct Node *p = head;
+    struct Node *q = head->next;
+    for (int i = 0; i < index - 1; i++)
+    {
+        p = p->next;
+        q = q->next;
+    }
+    p->next = q->next;
+    free(q);
+    return head;
+}
+// FUNCTION FOR DELETION AT THE END OF A CIRCULAR LINKED LIST
+struct Node *deleteatend(struct Node *head)
+{
+    struct Node *p = head;
+    struct Node *q = head->next;
+    while (q->next != head)
+    {
+        p = p->next;
+        q = q->next;
+    }
+    p->next = head;
+    free(q);
+    return head;
+}
+// FUNCTION FOR DELETION USING A GIVEN VALUE IN A CIRCULAR LINKED LIST
+struct Node *deletebyvalue(struct Node *head, int value)
+{
+    struct Node *p = head;
+    struct Node *q = head->next;
+    while (q->data != value && q->next != head)
+    {
+        p = p->next;
+        q = q->next;
+    }
+    if (q->data == value)
+    {
+        p->next = q->next;
+        free(q);
+    }
+    return head;
+}
+// MAIN FUNCTION
+int main()
+{
+    struct Node *head;
+    struct Node *second;
+    struct Node *third;
+    struct Node *fourth;
+
+    // ALLOCATE MEMORY OF STRUCT NODE IN THE HEAP
+    head = (struct Node *)malloc(sizeof(struct Node));
+    second = (struct Node *)malloc(sizeof(struct Node));
+    third = (struct Node *)malloc(sizeof(struct Node));
+    fourth = (struct Node *)malloc(sizeof(struct Node));
+
+    // LINK HEAD TO SECOND NODE
+    head->data = 7;
+    head->next = second;
+
+    // LINK SECOND NODE TO THIRD NODE
+    second->data = 11;
+    second->next = third;
+
+    // LINK THIRD NODE TO FOURTH NODE
+    third->data = 41;
+    third->next = fourth;
+
+    // LINK THE FOURTH NODE TO THE HEAD NODE
+    fourth->data = 66;
+    fourth->next = head;
+
+    printf("THE CIRCULAR LINKED LIST BEFORE DELETION IS:\n");
+    linkedlistTraversal(head);
+    //head = deleteatfirst(head);
+    //head=deleteatindex(head,2);
+    // head=deleteatend(head);
+    // head=deletebyvalue(head,41);
+    printf("THE CIRCULAR LINKED LIST AFTER DELETION IS:\n");
+    linkedlistTraversal(head);
+    return 0;
+}
