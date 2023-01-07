@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+
+    int i,j,n,m,A[100][100],B[100][100],count=0;
+    printf("ENTER THE NUMBER OF ROWS IN BOTH THE MATRICES:\n");
+    scanf("%d",&n);
+    printf("ENTER THE NUMBER OF COLUMNS IN BOTH THE MATRICES:\n");
+    scanf("%d",&m);
+
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            printf("ENTER THE [%d][%d] ELEMENT OF THE FIRST MATRIX:\n",i,j);
+            scanf("%d",&A[i][j]);
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            printf("ENTER THE [%d][%d] ELEMENT OF THE SECOND MATRIX:\n",i,j);
+            scanf("%d",&B[i][j]);
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            if(A[i][j]==B[i][j])
+            {
+                count++;
+            }
+        }
+    }
+    if(count==(n*m))
+    {
+        printf("THE MATRICES ARE EQUAL!\n");
+    }
+    else
+    {
+        printf("THE MATRICES ARE UNEQUAL!\n");
+    }
+    return 0;
+}
