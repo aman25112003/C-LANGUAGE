@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int a,b,temp;
+    printf("ENTER THE VALUE OF a");
+    scanf("%d",&a);
+    printf("ENTER THE VALUE OF b");
+    scanf("%d",&b);
+    temp=a;
+    a=b;
+    b=temp;
+    printf("THA VALUE OF a IS %d\n",a);
+    printf("THE VALUE OF b IS %d",b);
+    return 0;
+}
