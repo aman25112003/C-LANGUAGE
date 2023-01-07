@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    char c;
+    printf("ENTER THE CHARACTER");
+    scanf("%c",&c);
+    if((c>='a'&&c<='z')||(c>='A'&&c<='Z'))
+    {
+        printf("ENTERED CHARACTER IS AN ALPHABET");
+    }
+    else
+    {
+        printf("ENTERED CHARACTER IS NOT AN ALPHABET");
+    }
+    return 0;
+}
