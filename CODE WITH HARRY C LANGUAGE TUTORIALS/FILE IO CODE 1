@@ -1,0 +1,17 @@
+#include <stdio.h>
+//#include  <stdlib.h>
+int main()
+{
+    FILE *ptr=NULL;
+    char string[34];
+    //*********READING A FILE**********
+    /*ptr=fopen("MYFILE_TXT","r");
+    fscanf(ptr,"%s",string);
+    printf("THE CONTENT OF THIS FILE HAS %s\n",string);*/
+    
+    
+    //*************WRITING A FILE************
+    ptr=fopen("MYFILE_TXT","w");//w FOR WRITING A FILE AND a FOR APPENDING 
+    fprintf(ptr,"%s",string);
+    return 0;
+}
