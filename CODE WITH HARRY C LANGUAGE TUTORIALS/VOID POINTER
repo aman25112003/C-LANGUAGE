@@ -1,0 +1,17 @@
+// VOID POINTER IS A POINTER THAT HAS NO DATA TYPE ASSOCIATED WITH IT
+// A VOID POINTER CAN EASILY BE TYPECASTED TO ANY POINTER TYPE
+// IN SIMPLE LANGUAGE IT IS A GENERAL PURPOSE POINTER VARIABLE
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main()
+{
+    int a = 345;
+    float b = 8.3;
+    void *ptr;
+    ptr = &b;
+    printf("THE VALUE OF b IS: %f\n", *((float *)ptr));//CANNOT DIRECTLY DEREFERENCE
+    ptr = &a;
+    printf("THE VALUE OF a IS: %d\n", *((int *)ptr));//CANNOT DIRECTLY DEREFERENCE
+    return 0;
+}
