@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <conio.h>
+#include <math.h>
+int length_of_num(int num)
+{
+    int flag=0;
+    while(num!=0)
+    {
+    num=num/10;
+    flag=flag+1;
+    }
+    return flag;
+}
+int main()
+{
+    int a,b,r=0,temp,result=1;
+    printf("ENTER THE NUMBER");
+    scanf("%d",&a);
+    int x=length_of_num(a);
+    temp=a;
+    while(a!=0)
+    {
+        b=a%10;
+        r=r+pow(b,x);
+        a=a/10;
+    }
+    if(temp==r)
+    {
+        printf("THE NUMBER IS AN ARMSTRONG NUMBER");
+    }
+    else
+    {
+        printf("THE NUMBER IS NOT AN ARMSTRONG NUMBER");
+    }
+    return 0;
+}
