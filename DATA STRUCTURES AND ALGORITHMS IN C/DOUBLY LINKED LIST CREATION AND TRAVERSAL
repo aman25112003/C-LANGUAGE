@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+struct Node 
+{
+    int data;
+    struct Node *prev;
+    struct Node *next;
+};
+//FUNTION FOR TRAVERSAL IN A DOUBLY LINKED LIST
+void linkedlistTraversal(struct Node *head)
+{
+    struct Node *ptr=head;
+    do
+    {
+        printf("ELEMENT:%d\n",ptr->data);
+        ptr=ptr->next;
+    }
+    while(ptr!=NULL);
+}
+//MAIN FUNCTION
+int main()
+{
+    struct Node *head;
+    struct Node *second;
+    struct Node *third;
+    struct Node *fourth;
+
+    //ALLOCATE THE MEMORY FOR STRUCT NODE IN THE HEAP
+
+    head=(struct Node *)malloc(sizeof(struct Node));
+    second=(struct Node *)malloc(sizeof(struct Node));
+    third=(struct Node *)malloc(sizeof(struct Node));
+    fourth=(struct Node *)malloc(sizeof(struct Node));
+
+    //LINK HEAD TO NULL AND SECOND NODE
+    head->prev=NULL;
+    head->data=7;
+    head->next=second;
+    //LINK SECOND TO THIRD NODE
+    second->data=11;
+    second->next=third;
+    //LINK THIRD NODE TO FOURTH
+    third->data=41;
+    third->next=fourth;
+    //LINK THE FOURTH NODE TO NULL
+    fourth->data=66;
+    fourth->next=NULL;
+    linkedlistTraversal(head);
+    return 0;
+}
