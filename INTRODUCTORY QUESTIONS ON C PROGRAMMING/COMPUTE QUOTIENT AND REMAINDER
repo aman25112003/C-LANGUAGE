@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int dividend,divisor,quotient,remainder;
+    printf("ENTER THE VALUES OF DIVIDEND AND DIVISOR");
+    scanf("%d\n%d",&dividend,&divisor);
+    quotient=dividend/divisor;
+    remainder=dividend%divisor;
+    printf("THE QUOTIENT IS %d\n",quotient);
+    printf("THE REMAINDER IS %d",remainder);
+    return 0;
+}
