@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+int main()
+{
+    int i,A[100],n;
+    printf("ENTER THE NUMBER OF ELEMENTS IN THE ARRAY:\n");
+    scanf("%d",&n);
+    for ( i = 0; i < n; i++)//TRAVERSAL THROUGH FOR LOOP
+    {
+        printf("ENTER THE %d ELEMENT OF THE ARRAY",i);
+        scanf("%d",&A[i]);
+    }
+    printf("THE ENTERED ARRAY IS:\n");
+    for ( i = 0; i < n ; i++)//TRAVERSAL THROUGH FOR LOOP
+    {
+        printf("%d\t",A[i]);
+    }
+    return 0;
+    
+}
