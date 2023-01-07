@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    char c;
+    printf("ENTER THE CHARACTER WHOSE ASCCI VALUE IS NEEDED ");
+    scanf("%c",&c);
+    printf("THE ASCII VALUE OF %c=%d",c,c);
+    return 0;
+}
