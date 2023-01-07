@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+int isPalindrome(int num)
+{
+    int x,y=0;
+    int temp=num;
+    while(num!=0)
+    {
+        x=num%10;
+        y=(y*10)+x;
+        num=num/10;
+    }
+    if(y==temp)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+int main(int argc, char const *argv[])
+{
+    int num;
+    printf("ENTER THE NUMBER TO CHECK WHETHER IT IS A PALINDROME NUMBER OR NOT\n");
+    scanf("%d",&num);
+    if(isPalindrome(num))
+    {
+        printf("THE ENTERED NUMBER IS A PALINDROME NUMBER\n");
+    }
+    else{
+        printf("THE ENTERED NUMBER IS NOT A PALINDROME NUMBER\n");
+    }
+    return 0;
+}
