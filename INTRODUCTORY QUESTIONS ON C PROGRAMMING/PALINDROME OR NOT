@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int a,b,temp,reverse=0;
+    printf("ENTER THE NUMBER");
+    scanf("%d",&a);
+    temp=a;
+    while (a!=0)
+    {
+        b=a%10;
+        reverse=(reverse*10)+b;
+        a=a/10;
+    }
+    if(reverse==temp)
+    {
+        printf("THE NUMBER ENTERED IS PALINDROME");
+    }
+    else
+    {
+        printf("THE NUMBER IS NOT A PALINDROME NUMBER");
+    }
+    return 0;
+}
