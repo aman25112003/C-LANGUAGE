@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <conio.h>
+int fibbo_recursive(int num)
+{
+    
+
+}
+int main()
+{
+    int i,n,f0=0,f1=1,nextterm=f0+f1;
+    printf("ENTER THE NUMBER OF NUMBERS NEEDED IN THE SERIES");
+    scanf("%d",&n);
+    printf("\t%d\t%d\t",f0,f1);
+    for(i=3;i<=n;i++)
+    {
+        printf("\t%d\t",nextterm);
+        f0=f1;
+        f1=nextterm;
+        nextterm=f0+f1;
+    }
+ return 0;   
+    
+}
