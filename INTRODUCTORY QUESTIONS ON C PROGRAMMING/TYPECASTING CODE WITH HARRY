@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <conio.h>
+//TYPECASTING SNTAX
+//(TYPE)VALUE
+int main()
+{
+    int a=3;
+    float b=54;
+    printf("THE VALUE OF a IS %d",a);
+    //printf("THE VALUE OF b IS %d",b);XXXXXX WRONG SYNTAX
+    printf("THE VALUE OF b IS %d",(int)b);
+    return 0;
+}
