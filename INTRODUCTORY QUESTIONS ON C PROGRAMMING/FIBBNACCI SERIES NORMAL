@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int n,i,f1=0,f2=1,temp,nextterm=f1+f2;
+    printf("ENTER THE NUMBER OF TERMS");
+    scanf("%d",&n);
+    printf("%d\t%d\t",f1,f2);
+    for(i=3;i<=n;i++)
+    {
+        printf("%d\t",nextterm);
+        f1=f2;
+        f2=nextterm;
+        nextterm=f1+f2;
+    }
+return 0;
+}
