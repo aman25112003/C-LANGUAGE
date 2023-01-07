@@ -1,0 +1,83 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+#define MAX_SIZE=100
+int STACK[MAX_SIZE];
+int top=-1;
+void push(int it)
+{
+    if(top==MAX_SIZE-1)
+    {
+        printf("STACK OVERFLOW");
+        return ;
+    }
+    else
+    {
+        top++;
+        STACK[top]=it;
+    }
+}
+void pop()
+{
+    int d;
+    if(top==-1)
+    {
+        printf("STACK UNDERFLOW");
+        return ;
+    }
+    d=STACK[top];
+    top--;
+    printf("THE DELETED ELEMENT IS %d",d);
+}
+void peep()
+{
+    for (int i = 0; i < top; i++)
+    {
+        printf("%d",STACK[i]);
+    }
+    
+}
+void main()
+{
+    int option item;
+    while(1)
+    {
+        printf("\n STACK OPERATIONS\n");
+        printf("1.PUSH");
+        printf("2.Pop");
+        printf("3.Peep");
+        printf("4.Exit");
+        printf("ENTER YOUR OPTION:\n");
+        scanf("%d",&option);
+        switch(option)
+        {
+            case1:
+            {
+                printf("ENTER THE ITEM");
+                scanf("%d",&item);
+                push(item);
+                break;
+            }
+            case2:
+            {
+                pop();
+                break;
+            }
+            case3:
+            {
+                peep();
+                break;
+            }
+            case4:
+            {
+                exit(0);
+                break;
+            }
+            default:
+            {
+                printf("INVALID CHOICE ENTERED");
+                break;
+            }
+        }
+    }   
+}
