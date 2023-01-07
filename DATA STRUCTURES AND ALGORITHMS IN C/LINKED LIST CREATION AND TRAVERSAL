@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+struct Node
+{
+    int data;
+    struct Node *next;
+};
+void linkedlistTraversal(struct Node *ptr)
+{
+    while(ptr!=NULL)
+    {
+        printf("ELEMENT:%d\n",ptr->data);
+        ptr=ptr->next;
+    }
+}
+int main()
+{
+    struct Node *head;
+    struct Node *second;
+    struct Node *third;
+    struct Node *fourth;
+    //ALLOCATION OF MEMORY FOR STRUCT NODE IN HEAP
+    head=(struct Node *)malloc(sizeof(struct Node));
+    second=(struct Node *)malloc(sizeof(struct Node));   
+    third=(struct Node *)malloc(sizeof(struct Node));
+    fourth=(struct Node *)malloc(sizeof(struct Node)); 
+    //LINK HEAD TO SECOND NODE 
+    head->data=7;
+    head->next=second;
+    //LINK SECOND AND THIRD NODE
+    second->data=11;
+    second->next=third;
+    //LINK THIRD AND FOURTH NODE
+    third->data=41;
+    third->next=fourth;
+    //TERMINATE THE LINKED LIST AT FOURTH NODE
+    fourth->data=66;
+    fourth->next=NULL;
+    linkedlistTraversal(head);
+    return 0;
+}
