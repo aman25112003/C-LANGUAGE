@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int a,b,hcf,temp;
+    printf("ENTER THE TWO NUMBERS");
+    scanf("%d\n%d",&a,&b);
+    while(a!=0)
+    {
+        temp=a;
+        a=b%a;
+        b=temp;
+    }
+    hcf=b;
+    printf("THE HCF OF THE TWO  NUMBERS IS %d",hcf);
+    return 0;
+}
