@@ -1,0 +1,38 @@
+//A POINTER POINTING TO A FREED MEMORY LOCATION OR THE LOCATION WHOSE CONTENT HAS BEEN DELETED IS CALLED DANGLING POINTER
+//DANGLING POINTERS ARISE DURING OBJECT DESTRUCTION WHEN AN OBJECT THAT HAS AN INCOMING REFERENCE IS DELETED OR DEALLOCATED , WITHOUT MODIFYING THE VALUE OF THE POINTER , SO THAT THE POINTER STILL POINTS TO THE MEMORY LOCATION OF THE DEALLOCATED MEMORY
+
+#include <stdio.h>
+#include <stdlib.h>
+#include  <string.h>
+int *functiondangling()
+{
+    int a=34;
+    int b=364;
+    int sum=a+b;
+    return &sum;
+}
+int main()
+{
+    //CASE 1. DEALLOCATION OF A MEMORY BLOCK
+
+    int *ptr=(int *)malloc(7*sizeof(int));
+    ptr[0]=34
+    ptr[1]=36
+    ptr[2]=64
+    ptr[3]=5  
+    free(ptr);//PTR IS NOW A DANGLING POINTER
+
+    //CASE 2. FUNCTION RETURNING LOCAL VARIABLES ADDRESS
+    int *dangptr=functiondangling();//PTR IS NOW A DANGLING POINTER
+
+
+    int *danglingptr3;
+    //CASE 3. IF A VARIABLE GOES OUT OF SCOPE
+        
+    {
+        int a=12;
+        danglingptr3=&a;
+    }
+    //HERE VARIABLE GOES OUT OF SCOPE WHICH MEANS DANGLINGPTR3 IS POINTING TO A LOCATION WHICH IS FREE AND HENCE DANGLINGPTR3 IS NOW A DANGLING POINTER
+    return 0;
+}
