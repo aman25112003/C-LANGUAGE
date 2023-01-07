@@ -1,0 +1,80 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+int main()
+{
+    int i,j,k,n,m,x,y,A[100][100],B[100][100],C[100][100];
+    printf("ENTER THE NUMBER OF ROWS IN THE FIRST MATRIX:\n");
+    scanf("%d",&n);
+    printf("ENTER THE NUMBER OF COLUMNS IN THE FIRST MATRIX:\n");
+    scanf("%d",&m);
+    printf("ENTER THE NUMBER OF ROWS IN THE SECOND MATRIX:\n");
+    scanf("%d",&x);
+    printf("ENTER THE NUMBER OF COLUMNS IN THE SECOND MATRIX:\n");
+    scanf("%d",&y);
+    if(m!=x)
+    {
+        printf("THE MATRICES CANNOT BE MULTIPLIED:\n");
+        exit(0);
+    }
+    else
+    {
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<m;j++)
+            {
+                printf("ENTER THE [%d][%d] ELEMENT OF THE FIRST MATRIX:\n",i,j);
+                scanf("%d",&A[i][j]);
+            }
+        }
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<m;j++)
+            {
+                printf("ENTER THE [%d][%d] ELEMENT OF THE SECOND MATRIX:\n",i,j);
+                scanf("%d",&B[i][j]);
+            }
+        }
+        printf("THE FIRST MATRIX IS:\n");
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<m;j++)
+            {
+                printf("%d\t",A[i][j]);
+            }
+            printf("\n");
+        }
+        printf("THE SECOND MATRIX IS:\n");
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<m;j++)
+            {
+                printf("%d\t",B[i][j]);
+            }
+            printf("\n");
+        }
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<y;j++)
+            {
+                k=0;
+                for(k=0;k<m;k++)
+                {
+                    C[i][j]+=A[i][k]*B[k][j];
+                }       
+            }
+        }
+        printf("\n\n");
+        printf("THE MULTIPLICATION OF THE TWO MATRICES IS:\n");
+         for(i=0;i<n;i++)
+        {
+            for(j=0;j<y;j++)
+            {
+                printf("%d\t",C[i][j]);     
+            }
+            printf("\n");
+        }
+
+    }
+return 0;    
+}
