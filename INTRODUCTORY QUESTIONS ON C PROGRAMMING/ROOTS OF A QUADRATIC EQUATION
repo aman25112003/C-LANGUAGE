@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <conio.h>
+#include <math.h>
+int main()
+{
+    double a,b,c,D,root1,root2,realpartroot1,imagpartroot1,realpartroot2,imagpartroot2;
+    printf("ENTER THE VALUES OF a,b,c");
+    scanf("%lf\n%lf\n%lf",&a,&b,&c);
+    D=(b*b)-(4*a*c);
+    if(D>0)
+    {
+        root1=((-b)+sqrt(D))/(2*a);
+        root2=((-b)-sqrt(D))/(2*a);
+        printf("THE VALUE OF FIRST ROOT IS %.2lf\n",root1);
+        printf("THE VALUE OF SECOND ROOT IS %.2lf\n",root2);
+    }
+    else if(D==0)
+    {
+        root1=(-b)/(2*a);
+        root2=(-b)/(2*a);
+        printf("THE VALUE OF FIRST ROOT IS %.2lf\n",root1);
+        printf("THE VALUE OF SECOND ROOT IS %.2lf\n");
+    }
+    else
+    {
+        realpartroot1=(-b)/(2*a);
+        imagpartroot1=(sqrt(-D))/(2*a);
+        realpartroot2=(-b)/(2*a);
+        imagpartroot2=-((sqrt(-D))/(2*a));
+        printf("THE REAL PART OF ROOT 1 IS %.2lf\n",realpartroot1);
+        printf("THE IMAGINARY PART OF ROOT 1 IS %.2lfi\n",imagpartroot1);
+        printf("THE REAL PART OF ROOT 2 IS %.2lf\n",realpartroot2);
+        printf("THE IMAGINARY PART OF ROOT 2 IS %.2lfi\n",imagpartroot2);
+    }
+    return 0;
+}
