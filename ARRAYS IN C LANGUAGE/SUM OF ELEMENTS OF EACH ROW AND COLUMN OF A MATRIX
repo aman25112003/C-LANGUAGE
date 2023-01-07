@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int i,j,n,A[100][100],x=0,sum=0,sum1=0;
+    printf("ENTER THE SIZE OF THE MATRIX:\n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            printf("ENTER THE [%d][%d] ELEMENT OF THE ARRAY:\n",i,j);
+            scanf("%d",&A[i][j]);
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        sum=0;
+        printf("THE SUM OF THE %d ROW ELEMENTS IS:\n",i);
+        x=0;
+        for(j=0;j<n;j++)
+        {
+            sum=sum+A[i][j];            
+        }
+        printf("%d\n",sum);
+    }
+    for(i=0;i<n;i++)
+    {
+        sum1=0;
+        printf("THE SUM OF THE %d COLUMN ELEMENTS IS:\n",i);
+        for(j=0;j<n;j++)
+        {
+            sum1=sum1+A[j][i];            
+        }
+        printf("%d\n",sum1);
+    }
+return 0;
+}
