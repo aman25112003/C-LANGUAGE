@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <conio.h>
+#include <math.h>
+int armstrong_num(int num)
+{
+    int b,r=0,temp,x,temp1;
+    int flag=0;
+    temp=num;
+    temp1=num;
+    while(num!=0)
+    {
+    num=num/10;
+    flag=flag+1;
+    }
+    x=flag;
+    while(temp!=0)
+    {
+        b=temp%10;
+        r=r+pow(b,x);
+        temp=temp/10;
+    }
+    if(r==temp1)
+    {
+        return temp1;
+    }
+}
+int main()
+{
+    int open,close,i,armstrongnums;
+    printf("ENTER THE OPENING RANGE:");
+    scanf("%d",&open);
+    printf("ENTER THE CLOSING RANGE:");
+    scanf("%d",&close);
+    for(i=open;i<=close;i++)
+    {
+        armstrongnums=armstrong_num(i);
+        if(armstrongnums==i)
+        {
+            printf("THE ARMSTRONG NUMBER BETWEEN %d AND %d IS %d\n",open,close,i);
+        }
+    }
+return 0;
+}
