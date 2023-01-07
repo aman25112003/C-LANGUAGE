@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int n,A[100],i,max,min;
+    printf("ENTER THE NUMBER OF ELEMENTS IN THE ARRAY\n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("ELEMENT %d:\n",i);
+        scanf("%d",&A[i]);
+    }
+    max=A[0];
+    min=A[0];
+    for(i=1;i<n;i++)
+    {
+            if(A[i]>max)
+            {
+                max=A[i];
+            }
+          
+            if(A[i]<min)
+            {
+                min=A[i];
+            }
+         
+        
+    }
+    printf("THE MAXIMUM ELEMENT IS %d\n",max);
+    printf("THE MINIMUM ELEMENT IS %d",min);
+    return 0;
+}
