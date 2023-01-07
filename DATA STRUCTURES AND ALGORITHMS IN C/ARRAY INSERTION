@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <conio.h>
+//DISPLAY FUNCTION 
+int display(int arr[],int size)
+{
+    int i;
+    for(i=0;i<size;i++)
+    {
+        printf("%d\n",arr[i]);
+    }
+}
+//FUNCTION FOR INSERTION IN AN ARRAY
+int insertion_in_an_array(int arr[],int size,int element,int index,int capacity)
+{
+    int i;
+    if(size>=capacity)
+    {
+        return -1;
+    }
+    for(i=size-1;i>=index;i--)
+    {
+        arr[i+1]=arr[i];
+    }
+    arr[index]=element;
+    return 1;
+}
+//MAIN FUNCTION
+int main()
+{
+    int i,arr[100],size,index,element;
+    printf("ENTER THE NUMBER OF ELEMENTS IN THE ARRAY:\n");
+    scanf("%d",&size);
+    printf("ENTER THE ELEMENT WHICH NEEDS TO BE INSERTED:\n");
+    scanf("%d",&element);
+    printf("ENTER THE INDEX AT WHICH THE ELEMENT NEEDS TO BE INSERTED:\n");
+    scanf("%d",&index);
+    for(i=0;i<size;i++)
+    {
+        printf("ENTER THE [%d] ELEMENT OF THE ARRAY\n",i);
+        scanf("%d",&arr[i]);
+    }
+    printf("THE ARRAY BEFORE INSERTION IS:\n");
+    display(arr,size);//CALLING DISPLAY FUNCTION
+    insertion_in_an_array(arr,size,element,index,100);//CALLING INSERTION IN AN ARRAY FUNCTION
+    size++;
+    printf("THE ARRAY AFTER INSERTION IS:\n");
+    display(arr,size);
+    return 0;
+}
