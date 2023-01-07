@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+struct Node
+{
+    int data;
+    struct Node *next;
+};
+// FUNCTION FOR TRAVERSAL IN A CIRCULAR LINKED LIST
+linkedlistTraversal(struct Node *head)
+{
+    struct Node *ptr = head;
+    do
+    {
+        printf("ELEMENT:%d\n", ptr->data);
+        ptr = ptr->next;
+    } while (ptr != head);
+}
+//MAIN FUNCTION
+int main()
+{
+    struct Node *head;
+    struct Node *second;
+    struct Node *third;
+    struct Node *fourth;
+
+    // ALLOCATE MEMORY OF STRUCT NODE IN THE HEAP
+    head = (struct Node *)malloc(sizeof(struct Node));
+    second = (struct Node *)malloc(sizeof(struct Node));
+    third = (struct Node *)malloc(sizeof(struct Node));
+    fourth = (struct Node *)malloc(sizeof(struct Node));
+
+    // LINK HEAD TO SECOND NODE
+    head->data = 7;
+    head->next = second;
+
+    // LINK SECOND NODE TO THIRD NODE
+    second->data = 11;
+    second->next = third;
+
+    // LINK THIRD NODE TO FOURTH NODE
+    third->data = 41;
+    third->next = fourth;
+
+    // LINK THE FOURTH NODE TO THE HEAD NODE
+    fourth->data = 66;
+    fourth->next = head;
+
+    printf("THE CIRCULAR LINKED LIST IS:\n");
+    linkedlistTraversal(head);
+    return 0;
+}
